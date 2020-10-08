@@ -10,5 +10,9 @@ function writeNumber() {
 
 }
 
+function generateNumber() {
+  return 0;
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writeNumber);
