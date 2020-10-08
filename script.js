@@ -39,10 +39,31 @@ function generateNumber() {
 
   var isPositive = confirm("Press OK to create a positive number.\nPress Cancel to create a negative number.");
   console.log('isPositive', isPositive, typeof isPositive);
-  // confirm: negative or positive?
 
-  // generate a number
+  var allDigits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  var nonZeroDigits = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  var evenDigits = ["0", "2", "4", "6", "8"];
+  var oddDigits = ["1", "3", "5", "7", "9"];
 
+  var generated = "";
+
+  // Math.floor(Math.random() * MAX)
+
+
+  // leading number must be one of the `nonZeroDigits`
+  var nonZeroIndex = Math.floor(Math.random() * nonZeroDigits.length);
+  generated = generated + nonZeroDigits[nonZeroIndex];
+
+  // generate a number:
+  //   size: 3 -> 123, 8 -> 12345678
+  //   isEven: even? last digit must be one of the `evenDigits`
+  //           odd? last digit must be one of the `oddDigits`
+  //   positive: positive? leave the number alone
+  //             negative? multiply the number by -1
+
+
+  console.log('generated', generated, typeof generated);
+  // convert `generated` to number
   return 0;
 }
 
