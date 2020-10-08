@@ -54,9 +54,11 @@ function generateNumber() {
   var nonZeroIndex = Math.floor(Math.random() * nonZeroDigits.length);
   generated = generated + nonZeroDigits[nonZeroIndex];
 
-  // generate a number:
-  //   size: 3 -> 123, 8 -> 12345678
-
+  var middleSize = size - 2;
+  for (var i = 0; i < middleSize; i = i + 1) {
+    var allIndex = Math.floor(Math.random() * allDigits.length);
+    generated = generated + allDigits[allIndex];
+  }
 
   if (isEven) {
     var evenIndex = Math.floor(Math.random() * evenDigits.length);
