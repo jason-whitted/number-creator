@@ -56,15 +56,23 @@ function generateNumber() {
 
   // generate a number:
   //   size: 3 -> 123, 8 -> 12345678
-  //   isEven: even? last digit must be one of the `evenDigits`
-  //           odd? last digit must be one of the `oddDigits`
   //   positive: positive? leave the number alone
   //             negative? multiply the number by -1
 
 
+  if (isEven) {
+    var evenIndex = Math.floor(Math.random() * evenDigits.length);
+    generated = generated + evenDigits[evenIndex];
+  } else {
+    var oddIndex = Math.floor(Math.random() * oddDigits.length);
+    generated = generated + oddDigits[oddIndex];
+  }
+
   console.log('generated', generated, typeof generated);
-  // convert `generated` to number
-  return 0;
+
+  generated = Number.parseInt(generated, 10);
+
+  return generated;
 }
 
 // Add event listener to generate button
