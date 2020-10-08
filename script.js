@@ -56,8 +56,6 @@ function generateNumber() {
 
   // generate a number:
   //   size: 3 -> 123, 8 -> 12345678
-  //   positive: positive? leave the number alone
-  //             negative? multiply the number by -1
 
 
   if (isEven) {
@@ -71,6 +69,10 @@ function generateNumber() {
   console.log('generated', generated, typeof generated);
 
   generated = Number.parseInt(generated, 10);
+
+  if (!isPositive) {
+    generated = generated * -1;
+  }
 
   return generated;
 }
